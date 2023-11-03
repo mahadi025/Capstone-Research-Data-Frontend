@@ -1,6 +1,6 @@
 {
   "name": "capstone-research-data-frontend",
-  "proxy": "https://capstone-data.vercel.app",
+  "proxy": "https://capstone-data.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
