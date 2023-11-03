@@ -11,7 +11,7 @@ export default function DataPage() {
 
     useEffect(() => {
         let getCapstoneData = async () => {
-            let response = await fetch(`/api/capstone-data/${id}/`);
+            let response = await fetch(`https://capstone-data.vercel.app/api/capstone-data/${id}/`);
             let data = await response.json();
             setCapstoneData(data);
         };

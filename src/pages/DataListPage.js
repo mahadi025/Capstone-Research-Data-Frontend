@@ -224,7 +224,7 @@ function ResearchDataPage() {
 
                                 return (
                                     <tr {...row.getRowProps()} onClick={() => {
-                                        navigate(`/capstone-data/${JSON.stringify(rowData.id)}`);
+                                        navigate(`https://capstone-data.vercel.app/capstone-data/${JSON.stringify(rowData.id)}`);
                                     }}>
                                         {row.cells.map((cell) => {
                                             if (cell.column.id !== 'id') {
