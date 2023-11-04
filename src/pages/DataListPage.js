@@ -49,7 +49,7 @@ function ResearchDataPage() {
     };
 
     let getCapstoneData = async () => {
-        let response = await axios.get("/capstone-data/");
+        let response = await axios.get("https://capstone-data.vercel.app/capstone-data/");
         setOriginalCapstoneData(response.data);
         setCapstoneData(response.data);
     };
