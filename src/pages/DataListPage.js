@@ -47,7 +47,7 @@ function ResearchDataPage() {
     };
 
     let getCapstoneData = async () => {
-        let response = await fetch("/api/capstone-data/");
+        let response = await fetch("/capstone-data/");
         let data = await response.json();
         setOriginalCapstoneData(data);
         setCapstoneData(data);
@@ -220,11 +220,10 @@ function ResearchDataPage() {
                             {rows.map((row) => {
                                 prepareRow(row);
 
-                                const rowData = row.original; // Get the entire row data
-
+                                const rowData = row.original;
                                 return (
                                     <tr {...row.getRowProps()} onClick={() => {
-                                        navigate(`https://capstone-data.vercel.app/capstone-data/${JSON.stringify(rowData.id)}`);
+                                        navigate(`/capstone-data/${JSON.stringify(rowData.id)}`);
                                     }}>
                                         {row.cells.map((cell) => {
                                             if (cell.column.id !== 'id') {
