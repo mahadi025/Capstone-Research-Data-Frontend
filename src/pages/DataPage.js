@@ -1,7 +1,7 @@
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { ReactComponent as ArrowLeft } from '../assets/arrow-left.svg'
-
+import axios from "axios";
 
 
 export default function DataPage() {
@@ -11,9 +11,8 @@ export default function DataPage() {
 
     useEffect(() => {
         let getCapstoneData = async () => {
-            let response = await fetch(`/capstone-data/${id}/`);
-            let data = await response.json();
-            setCapstoneData(data);
+            let response = await axios.get(`/capstone-data/${id}/`);
+            setCapstoneData(response.data);
         };
         getCapstoneData();
     }, [id]);

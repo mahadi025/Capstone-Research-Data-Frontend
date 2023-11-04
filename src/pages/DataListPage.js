@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from "react"
 import { useTable } from "react-table";
 import { useNavigate } from "react-router-dom"
+import axios from "axios";
+
 
 function ResearchDataPage() {
     let [originalCapstoneData, setOriginalCapstoneData] = useState([]);
@@ -47,10 +49,9 @@ function ResearchDataPage() {
     };
 
     let getCapstoneData = async () => {
-        let response = await fetch("/capstone-data/");
-        let data = await response.json();
-        setOriginalCapstoneData(data);
-        setCapstoneData(data);
+        let response = await axios.get("/capstone-data/");
+        setOriginalCapstoneData(response.data);
+        setCapstoneData(response.data);
     };
 
     const data = useMemo(() => capstoneData, [capstoneData]);
